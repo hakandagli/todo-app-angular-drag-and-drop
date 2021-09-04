@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+padding: 50px;}
+
+h2 img{
+    height: 85px;
+    margin-right: 10px;
+}
+
+.example-full-width{
+    width: 70%;
+    margin-right: 10px;
+}
+
+.todo-title{
+    flex:1;
+}
+
+.example-box .button{
+    opacity: 0;
+    transition: .3s;
+}
+
+.example-box:hover .button{
+    opacity: 1;
+}

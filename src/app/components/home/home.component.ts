@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { TodoService } from 'src/app/services/todo.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
-@Component({//decerator
-  selector: 'app-home', // component hangi html tag'ı ile çağrılacağını tanımlıyoruz
-  templateUrl: './home.component.html', // component'in view edildiği html dosyasının kısayolu
-  styleUrls: ['./home.component.css'],// component'e etki eden style dosyalarının kısayolu. Dizidir birden fazla dosya eklenebilir.
+@Component({
+  selector: 'app-home', 
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    /*this.setItems();*/
+ 
     this.getAllTodos();
   }
 
@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
-      /*Object.keys(this.data).forEach((key) => {
-        localStorage.setItem(key, JSON.stringify(this.data[key]));
-      });*/
+      // Object.keys(this.data).forEach((key) => {
+      //   localStorage.setItem(key, JSON.stringify(this.data[key]));
+      // });
     }
     this.updateTodo();
   }
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
   }
 
   removeTodo(id:any){
-    if(confirm('bu maddeyi silmek istediğinize emin misiniz ?')){
+    if(confirm('Are you sure you want to delete this item? ')){
       this.todoService.removeTodo(id)
       .subscribe((res)=>{
         console.log(res);
